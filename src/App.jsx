@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+const courseTitle = "Modern React";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const studentName = "Youssef";
+
+  const student = {
+    name: "Youssef",
+    age: 17,
+    track: "Frontend Development"
+  };
+
+  function sayHello() {
+    return `Hi ${studentName}! Happy coding 🚀`;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div>
+      <h1>🚀 Youssef’s React Playground</h1>
+
+      <p>Student name: {studentName}</p>
+
+      <p>Current course: {courseTitle}</p>
+
+      <p>
+        {studentName} is learning {courseTitle} right now!
       </p>
-    </>
-  )
+
+      <label htmlFor="userInput">Type your name here:</label>
+      <input type="text" id="userInput" />
+
+      <h3>Student Info</h3>
+      <p>Name: {student.name}</p>
+      <p>Age: {student.age}</p>
+      <p>Track: {student.track}</p>
+
+      <p>{sayHello()}</p>
+
+      {/*
+      I understand well: how variables work in JSX with {}
+      Still confusing: when to place variables outside components
+      My mistake: forgetting to wrap elements inside one parent div
+      */}
+    </div>
+  );
 }
 
-export default App
+export default App;
